@@ -7,7 +7,7 @@
 
         <div class="row">
             <div class="about-content">
-                <img src="../assets/images/taco-chefcartoon.png" alt="">
+                <img src="../assets/images/sumup.png" alt="">
                 <div class="about-content-text">
                     <p></p>
                     <p></p>
@@ -23,16 +23,16 @@
 
         <div class="row gallery">
             <div class="wrapper">
-                <img src="../assets/images/taco/taco-2.jpg" alt="">
-                <img src="../assets/images/taco/taco-4.jpg" alt="">
-                <img src="../assets/images/burrito/burrito-6.jpg" alt="">
-                <img src="../assets/images/burrito/burrito-2.jpg" alt="">
-                <img src="../assets/images/burrito/burrito-3.jpg" alt="">
-                <img src="../assets/images/nachos/nachos-1.jpg" alt="">
-                <img src="../assets/images/nachos/nachos-2.jpg" alt="">
-                <img src="../assets/images/nachos/nachos-3.jpg" alt="">
-                <img src="../assets/images/dessert/dessert-2.jpg" alt="">
-                <img src="../assets/images/dessert/dessert-6.jpg" alt="">
+                <img src="../assets/images/about1.jpg" alt="">
+                <img src="../assets/images/about2.jpg" alt="">
+                <img src="../assets/images/about3.jpg" alt="">
+                <img src="../assets/images/about4.jpg" alt="">
+                <img src="../assets/images/about5.jpg" alt="">
+                <img src="../assets/images/about6.jpg" alt="">
+                <img src="../assets/images/about7.jpg" alt="">
+                <img src="../assets/images/about11.jpg" alt="">
+                <img src="../assets/images/about9.jpg" alt="">
+                <img src="../assets/images/about10.jpg" alt="">
             </div>
         </div>
     </section>

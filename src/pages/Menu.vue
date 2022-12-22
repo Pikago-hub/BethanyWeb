@@ -31,29 +31,11 @@
 
 
                         <li>
-                            <input type="button" name="cbStatus" id="ooStatus" value="Online Only" hidden
+                            <input type="button" name="cbStatus" id="sdStatus" value="Seasonal Drinks" hidden
                                 @click="filterStatusBtn($event)" />
-                            <label for="ooStatus" class="d-flex justify-content-between">Online Only <button
+                            <label for="sdStatus" class="d-flex justify-content-between">Seasonal Drinks <button
                                     class="unselect-btn" @click="unselectStatusBtn($event)"
-                                    value="Online Only">X</button></label>
-                        </li>
-
-
-                        <li>
-                            <input type="button" name="cbStatus" id="soStatus" value="Sale Off" hidden
-                                @click="filterStatusBtn($event)" />
-                            <label for="soStatus" class="d-flex justify-content-between">Sale Off <button
-                                    class="unselect-btn" @click="unselectStatusBtn($event)"
-                                    value="Sale Off">X</button></label>
-                        </li>
-
-
-                        <li>
-                            <input type="button" name="cbStatus" id="sdStatus" value="Seasonal Dishes" hidden
-                                @click="filterStatusBtn($event)" />
-                            <label for="sdStatus" class="d-flex justify-content-between">Seasonal Dishes <button
-                                    class="unselect-btn" @click="unselectStatusBtn($event)"
-                                    value="Seasonal Dishes">X</button></label>
+                                    value="Seasonal Drinks">X</button></label>
                         </li>
 
 
@@ -144,16 +126,16 @@
                     <div class="menu-tabs">
                         <input type="button" id="allFilterFoodBtn" name="allFilterFoodBtn" value="all"
                             class="menu-tab-item" @click="filterFoodBtn($event)" />
-                        <input type="button" id="tacoFilterFoodBtn" name="tacoFilterFoodBtn" class="menu-tab-item"
-                            value="taco" @click="filterFoodBtn($event)" />
-                        <input type="button" id="burritoFilterFoodBtn" name="burritoFilterFoodBtn" class="menu-tab-item"
-                            value="burrito" @click="filterFoodBtn($event)" />
-                        <input type="button" id="nachosFilterFoodBtn" name="nachosFilterFoodBtn" class="menu-tab-item"
-                            value="nachos" @click="filterFoodBtn($event)" />
-                        <input type="button" id="sidesFilterFoodBtn" name="sidesFilterFoodBtn" class="menu-tab-item"
-                            value="sides" @click="filterFoodBtn($event)" />
-                        <input type="button" id="dessertFilterFoodBtn" name="dessertFilterFoodBtn" class="menu-tab-item"
-                            value="dessert" @click="filterFoodBtn($event)" />
+                        <input type="button" id="appetizersFilterFoodBtn" name="appetizersFilterFoodBtn" class="menu-tab-item"
+                            value="appetizers" @click="filterFoodBtn($event)" />
+                        <input type="button" id="riceFilterFoodBtn" name="riceFilterFoodBtn" class="menu-tab-item"
+                            value="rice" @click="filterFoodBtn($event)" />
+                        <input type="button" id="NoddlesFilterFoodBtn" name="NoddlesFilterFoodBtn" class="menu-tab-item"
+                            value="Noddles" @click="filterFoodBtn($event)" />
+                        <input type="button" id="sizzlingFilterFoodBtn" name="sizzlingFilterFoodBtn" class="menu-tab-item"
+                            value="sizzling" @click="filterFoodBtn($event)" />
+                        <input type="button" id="platterFilterFoodBtn" name="platterFilterFoodBtn" class="menu-tab-item"
+                            value="platter" @click="filterFoodBtn($event)" />
                         <input type="button" id="drinkFilterFoodBtn" name="drinkFilterFoodBtn" class="menu-tab-item"
                             value="drink" @click="filterFoodBtn($event)" />
                     </div>
@@ -274,17 +256,6 @@ export default {
         previous() {
             this.pageNum--;
         },
-        checkSale: function (food, statusArray) {
-            if (statusArray.includes("Sale Off")) {
-                if (parseFloat(food.food_discount) > 0) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-            return true;
-        },
         checkBest: function (food, statusArray) {
             if (statusArray.includes("Best Seller")) {
                 if (food.food_status.includes("best seller")) {
@@ -296,20 +267,9 @@ export default {
             }
             return true;
         },
-        checkOnl: function (food, statusArray) {
-            if (statusArray.includes("Online Only")) {
-                if (food.food_status.includes("online only")) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-            return true;
-        },
         checkSeason: function (food, statusArray) {
-            if (statusArray.includes("Seasonal Dishes")) {
-                if (food.food_status.includes("seasonal dishes")) {
+            if (statusArray.includes("Seasonal Drinks")) {
+                if (food.food_status.includes("Seasonal Drinks")) {
                     return true;
                 }
                 else {
@@ -332,7 +292,7 @@ export default {
         evaluateStatus: function (food, statusArray) {
             this.pageNum = 0;
             if (statusArray.length != 0) {
-                if (this.checkSale(food, statusArray) && this.checkBest(food, statusArray) && this.checkNew(food, statusArray) && this.checkSeason(food, statusArray) && this.checkOnl(food, statusArray)) {
+                if (this.checkBest(food, statusArray) && this.checkNew(food, statusArray) && this.checkSeason(food, statusArray)) {
                     return food;
                 }
             }

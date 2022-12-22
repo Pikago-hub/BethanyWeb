@@ -6,7 +6,7 @@
                 <h3>Original taste from China 😋</h3>
                 <p>We guarantee to use fresh food with the best quality. Customers will enjoy Chinese cuisine with
                     explosive, sophisticated flavors.</p>
-                <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
+                <a href="https://eats.redbirdcloud.com/BethanyCafe" class="btn">order now</a>
             </div>
             <div class="image">
                 <img src="../assets/images/b.jpg" alt="" class="home-img">
@@ -59,16 +59,13 @@
                     <div class="content center">
                         <span>special offer</span>
                         <div />
-                        <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
+                        <a href="https://eats.redbirdcloud.com/BethanyCafe" class="btn">order now</a>
                     </div>
                 </div>
 
                 <div class="grid col-md-4">
                     <img src="../assets/images/dis-2.jpg" alt="">
                     <div class="content center">
-                        <span>Try our signature drinks</span>
-                        <h3></h3>
-                        <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
                     </div>
                 </div>
             </div>
@@ -243,7 +240,7 @@ export default {
 }
 
 .home-banner .grid-banner .grid .content.center span {
-    color: rgb(83, 33, 124);
+    color: rgb(255, 255, 255);
 }
 
 .home-banner .grid-banner .grid .content.center h3 {

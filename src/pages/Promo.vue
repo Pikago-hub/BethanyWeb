@@ -141,7 +141,7 @@
 
         <div class="promotions-item">
             <div class="content-box">
-                <img src="../assets/images/dis-1.jpg" alt="">
+                <img src="../assets/images/pro-1.jpg" alt="">
             </div>
 
             <div class="description">
@@ -154,8 +154,26 @@
                         <p>If you don't want original teas, 50% for other other beverages!</p>
                     </li>
                 </ul>
-                <router-link @click="scrollToTop()" to="/menu" class="btn">order now</router-link>
+            </div> 
+        </div>
+
+        <div class="promotions-item">
+            <div class="content-box">
+                <img src="../assets/images/pro-2.jpg" alt="">
             </div>
+
+            <div class="description">
+                <h3>Try one of our signature drinks</h3>
+                <ul>
+                    <li>
+                        <p>Fusion Tea & Tea Latte</p>
+                    </li>
+                    <li>
+                        <p>Slush & Smoothies</p>
+                    </li>
+                </ul>
+                <a href="https://eats.redbirdcloud.com/BethanyCafe" class="btn">order now</a>
+            </div> 
         </div>
 
     </div>
