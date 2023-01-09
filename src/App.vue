@@ -19,8 +19,6 @@
 <script>
 import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
-import { mapActions } from 'vuex';
-import { mapState } from 'vuex';
 export default {
   name: 'App',
   components: {
@@ -28,17 +26,6 @@ export default {
       FooterComponent
   },
 
-  created() {
-      this.getFoodsData()
-  },
-
-  computed: {
-      ...mapState(["admin"])
-  },
-
-  methods: {
-      ...mapActions(["getFoodsData"])
-  }
 }
 </script>
 

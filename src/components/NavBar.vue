@@ -1,6 +1,7 @@
 <template>
     <div class="header">
-        <router-link @click="scrollToTop()" to="/" class="logo"><img src="../assets/images/bethany.png" alt="" />
+        <router-link @click="scrollToTop()" to="/" class="logo">
+            <img src="../assets/images/bethany.png" />
         </router-link>
 
         <nav class="navbar">
@@ -10,7 +11,7 @@
             <router-link @click="scrollToTop()" to="/menu">menu</router-link>
         </nav>
 
-        <div class="icons">
+        <!-- <div class="icons">
             <div id="menu-btn" class="fas fa-bars menu-btn" @click="showNav"></div>
             <router-link @click="scrollToTop()" to="cart">
                 <div class="fas fa-shopping-cart cart"></div>
@@ -39,56 +40,14 @@
                 </ul>
             </div>
 
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
 export default {
     name: 'NavBar',
-
-    computed: {
-        ...mapState(["user"])
-    },
-
-    mounted() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    unmounted() {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
-
     methods: {
-        ...mapMutations(["setUser"]),
-
-        scrollToTop() {
-            window.scrollTo(0, 0);
-        },
-
-        showNav: function () {
-            let navbar = document.querySelector('.header .navbar');
-            navbar.classList.toggle('active');
-        },
-
-        showLog: function () {
-            let mq = window.matchMedia("(max-width: 768px)");
-            if (mq.matches) {
-                let log = document.querySelector('.drop-down-select');
-                log.classList.toggle('active');
-            }
-        },
-
-        handleScroll: function () {
-            let navbar = document.querySelector('.header .navbar');
-            navbar.classList.remove('active');
-            let log = document.querySelector('.drop-down-select');
-            log.classList.remove('active');
-        },
-
-        handleLogout: function () {
-            this.setUser("");
-        }
     }
 }
 </script>
@@ -99,7 +58,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+
     background: #fff;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
     display: flex;
@@ -115,8 +74,8 @@ export default {
 }
 
 .header .logo img {
-    padding-right: .5rem;
-    color: #27ae60;
+    max-inline-size: 100%;
+  block-size: auto;
 }
 
 .header .navbar a {

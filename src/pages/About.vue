@@ -5,15 +5,7 @@
             <h3>good quality dishes</h3>
         </div>
 
-        <div class="row">
-            <div class="about-content">
-                <img src="../assets/images/sumup.png" alt="">
-                <div class="about-content-text">
-                    <p></p>
-                    <p></p>
-                </div>
-            </div>
-        </div>
+
 
         <div class="row">
             <div class="about-article">

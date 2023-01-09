@@ -1,13 +1,5 @@
 <template>
     <div class="footer">
-        <div class="news-letter">
-            <h3>Receive event notifications</h3>
-            <form onsubmit="event.preventDefault();">
-                <input type="email" name="useremailreceiveinfo" placeholder="enter your email"
-                    id="useremailreceiveinfo">
-                <input type="submit" value="subscribe">
-            </form>
-        </div>
 
         <div class="box-container">
 
@@ -41,22 +33,6 @@
                 <router-link @click="scrollToTop()" to="/promotions"> <i class="fas fa-arrow-right"></i> promotions
                 </router-link>
                 <router-link @click="scrollToTop()" to="/menu"> <i class="fas fa-arrow-right"></i> menu</router-link>
-            </div>
-
-            <div class="box">
-                <h3>extra links</h3>
-                <div v-if="user">
-                    <router-link @click="scrollToTop()" to="/cart"> <i class="fas fa-arrow-right"></i> my order
-                    </router-link>
-                    <router-link @click="scrollToTop()" to="/myorder"> <i class="fas fa-arrow-right"></i> my orders
-                    </router-link>
-                </div>
-                <div v-else>
-                    <router-link @click="scrollToTop()" to="/login"> <i class="fas fa-arrow-right"></i> login
-                    </router-link>
-                    <router-link @click="scrollToTop()" to="/register"> <i class="fas fa-arrow-right"></i> register
-                    </router-link>
-                </div>
             </div>
 
             <div class="box">

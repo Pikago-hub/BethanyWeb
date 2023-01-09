@@ -3,9 +3,7 @@
         <div class="home-main">
             <div class="content">
                 <span>welcome foodies</span>
-                <h3>Original taste from China 😋</h3>
-                <p>We guarantee to use fresh food with the best quality. Customers will enjoy Chinese cuisine with
-                    explosive, sophisticated flavors.</p>
+                <h3>We guarantee to use fresh food with the best quality.😋</h3>
                 <a href="https://eats.redbirdcloud.com/BethanyCafe" class="btn">order now</a>
             </div>
             <div class="image">
