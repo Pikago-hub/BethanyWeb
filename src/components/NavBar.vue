@@ -74,8 +74,10 @@ export default {
 }
 
 .header .logo img {
+    padding-right: .5rem;
+    color: #27ae60;
     max-inline-size: 100%;
-  block-size: auto;
+    block-size: auto;
 }
 
 .header .navbar a {

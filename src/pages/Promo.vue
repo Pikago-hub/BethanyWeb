@@ -163,13 +163,10 @@
             </div>
 
             <div class="description">
-                <h3>Try one of our signature drinks</h3>
+                <h3>Buy 7 drinks and get next on FREE!</h3>
                 <ul>
                     <li>
-                        <p>Fusion Tea & Tea Latte</p>
-                    </li>
-                    <li>
-                        <p>Slush & Smoothies</p>
+                        <p>Apply to all drink kinds </p>
                     </li>
                 </ul>
                 <a href="https://eats.redbirdcloud.com/BethanyCafe" class="btn">order now</a>
