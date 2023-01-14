@@ -4,19 +4,20 @@
             <img src="../assets/images/bethany.png" />
         </router-link>
 
-        <nav class="navbar">
-            <router-link @click="scrollToTop()" to="/">home</router-link>
-            <router-link @click="scrollToTop()" to="/about">about</router-link>
-            <router-link @click="scrollToTop()" to="/promotions">promotions</router-link>
-            <router-link @click="scrollToTop()" to="/menu">menu</router-link>
+        <nav  class="navbar">
+            <router-link  to="/">home</router-link>
+            <router-link  to="/about">about</router-link>
+            <router-link  to="/promotions">promotions</router-link>
+            <router-link  to="/menu">menu</router-link>
         </nav>
 
-        <!-- <div class="icons">
-            <div id="menu-btn" class="fas fa-bars menu-btn" @click="showNav"></div>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars menu-btn" @click="showNav()"></div>
+            <!--
             <router-link @click="scrollToTop()" to="cart">
                 <div class="fas fa-shopping-cart cart"></div>
             </router-link>
-
+            
             <div v-if="!user" class="fas fa-user account" @click="showLog">
                 <ul class="drop-down-select">
                     <li>
@@ -28,7 +29,7 @@
                 </ul>
 
             </div>
-
+            
             <div v-else class="fas fa-user account" style="background: #f38609;color: white;" @click="showLog">
                 <ul class="drop-down-select">
                     <li>
@@ -39,22 +40,44 @@
                     </li>
                 </ul>
             </div>
+            -->
 
-        </div> -->
+        </div>
+    
+  
+   
+ 
     </div>
 </template>
 
 <script>
+import Modal from "@/admin/Modal";
 export default {
+    
+    
     name: 'NavBar',
+     data() {
+        return {
+            modalOpen: false
+        }
+    },
     methods: {
+        showNav() {
+        this.modalOpen = !this.modalOpen
+    },
+    components: {
+        Modal
+      }
     }
 }
 </script>
 
 <style scoped>
+
+
 .header {
     position: sticky;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
@@ -63,7 +86,7 @@ export default {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     padding: 2rem 9%;
 }
 
