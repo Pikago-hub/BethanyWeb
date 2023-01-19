@@ -55,7 +55,7 @@
 
 <script>
 import Modal from "@/admin/Modal";
-import { ElButton } from 'element-plus'
+
 export default {
     
     
@@ -68,11 +68,10 @@ export default {
     methods: {
         showNav() {
         this.modalOpen = !this.modalOpen
-        console.log('sdfsf')
+        
     },
     components: {
-        Modal,
-        ElButton
+        Modal
       }
     }
 }

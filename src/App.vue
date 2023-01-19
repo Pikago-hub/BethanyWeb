@@ -19,7 +19,7 @@
 <script>
 import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
-//import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
 
 
 
