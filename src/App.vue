@@ -19,6 +19,10 @@
 <script>
 import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
+//import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+
+
 export default {
   name: 'App',
   components: {
@@ -31,5 +35,7 @@ export default {
 
 <style>
 @import "./assets/css/global_style.css";
+
+
 </style>
 

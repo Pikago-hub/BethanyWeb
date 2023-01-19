@@ -12,8 +12,10 @@
         </nav>
 
         <div class="icons">
-            <div id="menu-btn" class="fas fa-bars menu-btn" @click="showNav()"></div>
             <!--
+            <div id="menu-btn" class="fas fa-bars menu-btn" @click="showNav()"></div>
+            
+            
             <router-link @click="scrollToTop()" to="cart">
                 <div class="fas fa-shopping-cart cart"></div>
             </router-link>
@@ -40,18 +42,20 @@
                     </li>
                 </ul>
             </div>
-            -->
-
+        -->
+            
         </div>
-    
+        
   
    
  
     </div>
+    
 </template>
 
 <script>
 import Modal from "@/admin/Modal";
+import { ElButton } from 'element-plus'
 export default {
     
     
@@ -64,9 +68,11 @@ export default {
     methods: {
         showNav() {
         this.modalOpen = !this.modalOpen
+        console.log('sdfsf')
     },
     components: {
-        Modal
+        Modal,
+        ElButton
       }
     }
 }
@@ -86,7 +92,7 @@ export default {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
+   /*justify-content: space-between;*/
     padding: 2rem 9%;
 }
 
@@ -117,6 +123,7 @@ export default {
     color: #f38609;
 }
 
+
 .header .icons div {
     height: 4.5rem;
     width: 4.5rem;
@@ -143,7 +150,7 @@ export default {
 #menu-btn {
     display: none;
 }
-
+/*
 .header .icons .account .drop-down-select {
     display: none;
     position: absolute;
@@ -175,9 +182,9 @@ export default {
     color: white;
 }
 
-/* .header .icons .account:hover .drop-down-select {
+ .header .icons .account:hover .drop-down-select {
     display: block;
-} */
+} 
 
 .header .icons .account:hover .drop-down-select a {
     background-color: #f7f7f7;
@@ -188,6 +195,7 @@ export default {
     background-color: #f38609;
     color: white;
 }
+*/
 
 @media (min-width: 769px) {
     .header .icons .account:hover .drop-down-select {
@@ -197,14 +205,17 @@ export default {
 
 @media (max-width: 768px) {
     .header .navbar {
-        position: absolute;
+        /*position: absolute;
         top: 99%;
         left: 0;
         right: 0;
         background: #fff;
+        
         border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
         border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+        
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        */
     }
 
     .header .navbar.active {
@@ -218,7 +229,7 @@ export default {
     }
 
     #menu-btn {
-        display: inline-block;
+        /*display: inline-block;*/
     }
 
 }
@@ -229,4 +240,5 @@ export default {
         margin: 0;
     }
 }
+
 </style>
