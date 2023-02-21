@@ -8,29 +8,30 @@
       <router-link to="/">home</router-link>
       <router-link to="/about">about</router-link>
       <router-link to="/promotions">promotions</router-link>
+      <router-link to="/menu">menu</router-link>
     </nav>
   </div>
 </template>
 
 <script>
-import Modal from "@/admin/Modal";
+import Modal from '@/admin/Modal'
 
 export default {
-  name: "NavBar",
+  name: 'NavBar',
   data() {
     return {
       modalOpen: false,
-    };
+    }
   },
   methods: {
     showNav() {
-      this.modalOpen = !this.modalOpen;
+      this.modalOpen = !this.modalOpen
     },
     components: {
       Modal,
     },
   },
-};
+}
 </script>
 
 <style scoped>

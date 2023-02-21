@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "../pages/Home.vue";
 import About from "../pages/About.vue";
 import Promo from "../pages/Promo.vue";
+import Menu from "../pages/Menu.vue";
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: "/promotions",
     name: "Promotions",
     component: Promo,
+  },
+  {
+    path: "/Menu",
+    name: "Menu",
+    component: Menu,
   },
   {
     path: "/:pathMatch(.*)*",
