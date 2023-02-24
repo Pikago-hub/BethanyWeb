@@ -1,4 +1,8 @@
 <template>
+  <div class="heading" style="padding-top: 2%;">
+    <span>Menu</span>
+    <h3>Our Full Menu</h3>
+  </div>
   <div class="categories-grid">
     <div
       v-for="(item, index) in categories"
@@ -13,6 +17,8 @@
             :src="imageUrlFor(item.image)"
             :alt="item.image.alt"
             width="240"
+            height="240"
+            style="object-fit: cover;"
           />
         </div>
         <div class="category-content">
@@ -119,9 +125,7 @@ export default {
 }
 
 .category {
-  background-color: #f0f0f0;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
 }
@@ -131,9 +135,6 @@ export default {
 }
 
 .category img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
 }
 
 .modal-overlay {
@@ -156,11 +157,13 @@ export default {
   padding: 60px 0;
   border-radius: 20px;
   overflow-y: auto;
+  padding: 2%;
 }
 
 .card {
   display: flex;
   flex-direction: row;
+  padding: 2%;
 }
 
 .image {
