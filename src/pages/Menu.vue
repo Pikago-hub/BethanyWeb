@@ -3,14 +3,14 @@
     <span>Menu</span>
     <h3>Our Full Menu</h3>
   </div>
-  <div class="categories-grid">
+  <div class="categories-grid d-flex flex-wrap">
     <div
       v-for="(item, index) in categories"
       :key="index"
-      class="category"
+      class="category col-lg-2 m-4"
       @click="openModal(item)"
     >
-      <div class="card">
+      <div class="">
         <div class="image">
           <img
             v-if="item.image"
@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div v-show="showModal">
+  <div v-show="showModal" class="m-5">
     <div class="modal-overlay" @click="closeModal">
       <div class="card-modal">
         <div v-for="(item, index) in dishes" :key="index" class="card">
@@ -38,14 +38,13 @@
           </div>
           <div class="image">
             <img
-              class="check card-img"
+              class="check"
               v-if="item.image"
               :src="imageUrlFor(item.image).ignoreImageParams().width(240)"
               :alt="item.image.alt"
             />
           </div>
         </div>
-
         <button @click="closeModal">Back</button>
       </div>
     </div>
@@ -120,7 +119,7 @@ export default {
 <style scoped>
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, calc(100% / 3 - 2rem)));
+
   gap: 2rem;
   padding: 3rem;
 }
@@ -139,6 +138,7 @@ export default {
 }
 
 .modal-overlay {
+  padding-top: 2rem;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -156,9 +156,7 @@ export default {
   width: 500px;
   margin-top: 20%;
   padding: 60px 0;
-  border-radius: 20px;
   overflow-y: auto;
-  padding: 2%;
 }
 
 .card {
