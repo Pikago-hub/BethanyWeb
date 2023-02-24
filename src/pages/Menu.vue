@@ -28,8 +28,8 @@
     </div>
   </div>
 
-  <div v-show="showModal" class="m-5">
-    <div class="modal-overlay" @click="closeModal">
+  <div v-show="showModal" class="m-5" >
+    <div class="modal-overlay" >
       <div class="card-modal">
         <div v-for="(item, index) in dishes" :key="index" class="card">
           <div>
@@ -138,24 +138,44 @@ export default {
 }
 
 .modal-overlay {
-  padding-top: 2rem;
+  
   position: fixed;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  
+  top: 0;
+  /*
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  */
+  
   display: flex;
   justify-content: center;
   background-color: #000000da;
 }
 
 .card-modal {
+  border-radius: 5%;
   text-align: center;
   background-color: white;
+  /*
   height: 500px;
   width: 500px;
+  */
+  height: 50%;
+  width: 50vh;
+  margin:auto;
+  
+  position:relative;
+  
+
+  /*
   margin-top: 20%;
   padding: 60px 0;
+  */
   overflow-y: auto;
 }
 
@@ -168,8 +188,14 @@ export default {
 .image {
   margin-left: 0.5 rem;
   padding: 2rem;
+ 
 }
 
+.image img {
+  border-radius: 5%;
+  
+ 
+}
 .close {
   margin: 10% 0 0 16px;
   cursor: pointer;
@@ -181,6 +207,7 @@ export default {
 
 .check {
   width: 150px;
+  border-radius: 5%;
 }
 
 h6 {

@@ -78,11 +78,13 @@ export default {
   padding-right: 0.5rem;
   color: #27ae60;
   max-inline-size: 100%;
+  /*
   block-size: auto;
+  */
 }
 
 .header .navbar a {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin: 0 1rem;
   color: #666;
 }
@@ -96,10 +98,10 @@ export default {
 }
 
 .header .icons div {
-  height: 4.5rem;
-  width: 4.5rem;
-  line-height: 4.5rem;
-  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 1.5rem;
   background: #f7f7f7;
   color: #130f40;
   border-radius: 0.5rem;
@@ -164,12 +166,13 @@ export default {
     color: white;
 }
 */
-
+/*
 @media (min-width: 769px) {
   .header .icons .account:hover .drop-down-select {
     display: block;
   }
 }
+*/
 
 @media (max-width: 768px) {
   .header .navbar {
@@ -185,16 +188,17 @@ export default {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         */
   }
-
+/*
   .header .navbar.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 
   .header .navbar a {
-    font-size: 2rem;
-    margin: 2rem;
+    font-size: 1.5rem;
+    margin: 1.5rem;
     display: block;
   }
+  */
 }
 
 @media (max-width: 576px) {
