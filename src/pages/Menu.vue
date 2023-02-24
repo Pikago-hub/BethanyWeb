@@ -97,6 +97,7 @@ export default {
           this.categories = categories
           //don't need this
           this.dishes = categories[0].dishes
+          console.log(categories)
         },
         (error) => {
           this.error = error
