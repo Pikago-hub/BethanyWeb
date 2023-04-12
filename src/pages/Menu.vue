@@ -1,58 +1,13 @@
 <template>
+  <div class="image-section">
+    <img
+      class="above-menu-image"
+      src="@/assets/images/b.png"
+      alt="Above Menu Image"
+    />
+  </div>
   <div class="heading">
-    <span>Menu</span>
-    <h3>PDF Menu</h3>
     <img class="pdf-menu" src="@/assets/images/menu.jpg" alt="PDF Menu" />
-  </div>
-  <div class="heading" style="padding-top: 2%">
-    <span>Menu</span>
-    <h3>Our Full Menu</h3>
-  </div>
-  <div class="categories-grid d-flex flex-wrap">
-    <div
-      v-for="(item, index) in categories"
-      :key="index"
-      class="category col-lg-2 m-4"
-      @click="openModal(item)"
-    >
-      <div class="">
-        <div class="image">
-          <img
-            v-if="item.image"
-            :src="imageUrlFor(item.image)"
-            :alt="item.image.alt"
-            width="240"
-            height="240"
-            style="object-fit: cover"
-          />
-        </div>
-        <div class="category-content">
-          <h2>{{ item.name }}</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div v-show="showModal" class="m-5">
-    <div class="modal-overlay">
-      <div class="card-modal">
-        <div v-for="(item, index) in dishes" :key="index" class="card">
-          <div>
-            <h6>{{ item.name }}</h6>
-            <p>{{ item.short_description }}</p>
-          </div>
-          <div class="image">
-            <img
-              class="check"
-              v-if="item.image"
-              :src="imageUrlFor(item.image).ignoreImageParams().width(240)"
-              :alt="item.image.alt"
-            />
-          </div>
-        </div>
-        <button @click="closeModal">Back</button>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -122,6 +77,22 @@ export default {
 </script>
 
 <style scoped>
+/* Styles for the new image section */
+.image-section {
+  text-align: center; /* Center the image */
+  margin-bottom: 20px; /* Add a gap between the image and the menu */
+}
+
+.above-menu-image {
+  max-width: 80%; /* Ensure the image fits within the container */
+  border-radius: 20px; /* Make the image rounded */
+  /* Additional styles for the image (e.g., margin) */
+}
+.pdf-menu {
+  border-radius: 20px;
+  max-width: 80%; /* Ensure the image fits within the container */
+  width: 100%; /* Set the width to 100% to make the image responsive */
+}
 .categories-grid {
   display: grid;
 

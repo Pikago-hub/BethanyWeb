@@ -1,73 +1,73 @@
 <template>
   <div>
     <div class="home-page">
-      <div class="home-main">
-        <div class="content text-center">
-          <span>welcome foodies</span>
-          <h3>We guarantee to use fresh food with the best quality.😋</h3>
-          <a
-            href="https://eats.redbirdcloud.com/BethanyCafe"
-            class="btn btn-info btn-lg"
-            >order now</a
-          >
+      <div class="slideshow-container">
+        <div
+          v-for="(image, index) in images"
+          :key="index"
+          class="slideshow-image"
+          :style="{
+            backgroundImage: `url(${image})`,
+            opacity: currentIndex === index ? 1 : 0,
+          }"
+        ></div>
+        <div class="dots-container">
+          <span
+            v-for="(image, index) in images"
+            :key="index"
+            class="dot"
+            :class="{ active: currentIndex === index }"
+            @click="currentIndex = index"
+          ></span>
         </div>
-        <div class="image">
-          <img src="../assets/images/b.jpg" alt="" class="home-img" />
+      </div>
+      <div class="home-category-container">
+        <div class="home-category">
+          <div class="box">
+            <a href="https://eats.redbirdcloud.com/BethanyCafe">
+              <img src="../assets/images/egg-roll-img.png" alt="" />
+              <h3>Appetizers</h3>
+            </a>
+          </div>
+
+          <div class="box">
+            <a href="https://eats.redbirdcloud.com/BethanyCafe">
+              <img src="../assets/images/fried-rice-img.png" alt="" />
+              <h3>Fried Rice</h3>
+            </a>
+          </div>
+
+          <div class="box">
+            <a href="https://eats.redbirdcloud.com/BethanyCafe">
+              <img src="../assets/images/noodle-soup-img.png" alt="" />
+              <h3>Noodles</h3>
+            </a>
+          </div>
+
+          <div class="box">
+            <a href="https://eats.redbirdcloud.com/BethanyCafe">
+              <img src="../assets/images/platter-img.png" alt="" />
+              <h3>Combination Platter</h3>
+            </a>
+          </div>
+
+          <div class="box">
+            <a href="https://eats.redbirdcloud.com/BethanyCafe">
+              <img src="../assets/images//tea-img.png" alt="" />
+              <h3>Tea</h3>
+            </a>
+          </div>
+
+          <div class="box">
+            <a href="https://eats.redbirdcloud.com/BethanyCafe">
+              <img src="../assets/images/ss-img.png" alt="" />
+              <h3>Slush & Smoothies</h3>
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="home-category">
-        <div class="box">
-          <a href="https://eats.redbirdcloud.com/BethanyCafe">
-            <img src="../assets/images/egg-roll-img.png" alt="" />
-            <h3>Appetizers</h3>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="https://eats.redbirdcloud.com/BethanyCafe">
-            <img src="../assets/images/rice-cake-img.png" alt="" />
-            <h3>Rice Cake</h3>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="https://eats.redbirdcloud.com/BethanyCafe">
-            <img src="../assets/images/fried-rice-img.png" alt="" />
-            <h3>Fried Rice</h3>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="https://eats.redbirdcloud.com/BethanyCafe">
-            <img src="../assets/images/noodle-soup-img.png" alt="" />
-            <h3>Noodles</h3>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="https://eats.redbirdcloud.com/BethanyCafe">
-            <img src="../assets/images/platter-img.png" alt="" />
-            <h3>Combination Platter</h3>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="https://eats.redbirdcloud.com/BethanyCafe">
-            <img src="../assets/images//tea-img.png" alt="" />
-            <h3>Tea</h3>
-          </a>
-        </div>
-
-        <div class="box">
-          <a href="https://eats.redbirdcloud.com/BethanyCafe">
-            <img src="../assets/images/ss-img.png" alt="" />
-            <h3>Slush&Smoothies</h3>
-          </a>
-        </div>
-      </div>
-
-      <div class="home-banner">
+      <!-- <div class="home-banner">
         <div class="grid-banner row">
           <div class="grid col-md-8">
             <img src="../assets/images/dis-1.jpg" alt="" />
@@ -85,7 +85,7 @@
             <div class="content center"></div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -93,21 +93,84 @@
 <script>
 export default {
   name: "Home",
+  // components: {
+  //   VueSlickCarousel,
+  // },
+  data() {
+    return {
+      images: [
+        require("@/assets/images/home1.png"),
+        require("@/assets/images/home2.png"),
+        require("@/assets/images/home3.png"),
+        require("@/assets/images/home5.png"),
+        require("@/assets/images/home6.png"),
+      ],
+      currentIndex: 0,
+      intervalId: null,
+    };
+  },
+
+  mounted() {
+    this.startSlideshow();
+  },
+  beforeUnmount() {
+    this.stopSlideshow();
+  },
 
   methods: {
-    scrollToTop() {
-      window.location.href = "https://eats.redbirdcloud.com/BethanyCafe";
+    startSlideshow() {
+      this.intervalId = setInterval(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      }, 3000);
+    },
+    stopSlideshow() {
+      clearInterval(this.intervalId);
     },
   },
 };
 </script>
 
 <style scoped>
-.home-main,
-.home-about,
-.home-banner,
-.home-category {
-  padding: 2rem 9%;
+.slideshow-container {
+  width: 80%;
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideshow-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.dots-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
 }
 
 .home-main {
@@ -160,9 +223,19 @@ export default {
 }
 
 /* home category */
+.home-category-container {
+  width: 80%; /* Set the width similar to the slideshow-container */
+  max-width: 800px; /* Set a maximum width */
+  margin: 0 auto; /* Center the container */
+  padding-bottom: 40px; /* Add some padding at the bottom */
+}
+
 .home-category {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Display a maximum of 3 boxes per row */
   gap: 1.5rem;
   padding-bottom: 5rem;
 }
@@ -170,8 +243,10 @@ export default {
 .home-category .box {
   padding: 2rem;
   text-align: center;
-  border-radius: 0.5rem;
-  background: #f7f7f7;
+  border-radius: 10px;
+  background: #fff9db;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem; /* Add padding to create space between text and edges */
 }
 
 .home-category .box:hover {
@@ -184,11 +259,13 @@ export default {
 
 .home-category .box img {
   height: 7rem;
+  border-radius: 10px; /* Add rounded corners to the image */
 }
 
 .home-category .box h3 {
   font-size: 1.8rem;
   color: #130f40;
+  word-break: break-word; /* Break long words if they don't fit in the box */
 }
 
 /* home banner */
@@ -331,6 +408,29 @@ export default {
 .home-about .content .icons-container .icons h3 {
   font-size: 1.7rem;
   color: #130f40;
+}
+
+@media (max-width: 576px) {
+  .home-category-container {
+    width: 90%; /* Adjust the width for smaller screens */
+    padding-bottom: 20px; /* Adjust the padding for smaller screens */
+  }
+}
+@media (max-width: 576px) {
+  .slideshow-container {
+    width: 90%; /* Adjust the width for smaller screens */
+    height: 200px; /* Adjust the height for smaller screens */
+    margin-bottom: 20px; /* Adjust the margin for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-category {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Display a maximum of 2 boxes per row on smaller screens */
+  }
 }
 
 @media (max-width: 768px) {

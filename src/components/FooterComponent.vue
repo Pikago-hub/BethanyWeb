@@ -2,75 +2,6 @@
   <div class="footer">
     <div class="box-container">
       <div class="box">
-        <h3>our menu</h3>
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Appetizers</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Fried Rice</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Rice Cake</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Steam Rice</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Lo Mein</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Rice Noddle</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Dry Noddle</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Sizzling</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Noodle Soup</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Combination Platter</router-link
-        >
-      </div>
-
-      <div class="box">
-        <h3>our menu</h3>
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Fusion Tea</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Bethany's Classic</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Coffee</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Bethany Café Top 10</router-link
-        >
-        <router-link @click="scrollToTop()" to="/menu"
-          ><i class="fas fa-arrow-right"></i> Fizzy Drinks</router-link
-        >
-      </div>
-
-      <div class="box">
-        <h3>quick links</h3>
-        <router-link @click="scrollToTop()" to="/">
-          <i class="fas fa-arrow-right"></i> home</router-link
-        >
-        <router-link @click="scrollToTop()" to="/about">
-          <i class="fas fa-arrow-right"></i> about</router-link
-        >
-        <router-link @click="scrollToTop()" to="/promotions">
-          <i class="fas fa-arrow-right"></i> promotions
-        </router-link>
-        <router-link @click="scrollToTop()" to="/menu">
-          <i class="fas fa-arrow-right"></i> menu</router-link
-        >
-      </div>
-
-      <div class="box">
         <h3>opening hours</h3>
         <p>open daily : 11am to 10:00pm</p>
       </div>
@@ -118,54 +49,18 @@ export default {
 .footer {
   background: #f7f7f7;
   padding: 2rem 9%;
-}
-
-.footer .news-letter {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.footer .news-letter h3 {
-  font-size: 2.5rem;
-  color: #130f40;
-  padding-bottom: 1rem;
-}
-
-.footer .news-letter form {
-  max-width: 70rem;
-  margin: 1rem auto;
-  max-width: 70rem;
-
-  display: flex;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-.footer .news-letter form input[type="email"] {
-  height: 100%;
-  width: 100%;
-  padding: 1rem 1.2rem;
-  font-size: 1.6rem;
-  color: #130f40;
-  text-transform: none;
-}
-
-.footer .news-letter form input[type="submit"] {
-  padding: 0 2rem;
-  font-size: 1.6rem;
-  color: #fff;
-  background: #27ae60;
-  cursor: pointer;
-}
-
-.footer .news-letter form input[type="submit"]:hover {
-  background: #130f40;
+  display: flex; /* Add this line to enable flex layout */
+  justify-content: center; /* Add this line to center the content horizontally */
+  flex-direction: column; /* Add this line to stack the content vertically */
+  align-items: center; /* Add this line to center the content vertically */
 }
 
 .footer .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1.5rem;
+  /* Add the following line to limit the width of the .box-container */
+  width: fit-content;
 }
 
 .footer .box-container .box h3 {

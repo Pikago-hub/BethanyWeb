@@ -9,6 +9,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <button class="promo-button" @click="openPromoLink">
+        <span class="promo-highlight">HUGE SAVING</span><br />
+        <span class="promo-text">FREE TEA OR 50% OFF</span><br />
+        <span class="promo-text">ORDER HERE</span>
+      </button>
+
       <div class="collapse navbar-collapse" :class="{ show: modalOpen }">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -49,6 +55,10 @@ export default {
   methods: {
     showNav() {
       this.modalOpen = !this.modalOpen;
+    },
+    openPromoLink() {
+      // Open the specified URL in a new tab
+      window.open("https://eats.redbirdcloud.com/BethanyCafe", "_blank");
     },
     components: {
       Modal,
@@ -124,60 +134,49 @@ export default {
   background: #f38609;
   color: white;
 }
-
-/*
-.header .icons .account .drop-down-select {
-    display: none;
-    position: absolute;
-    margin-left: -50px;
-    list-style-type: none;
+.promo-button {
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  margin: 10px;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
 }
 
-.header .icons .account .drop-down-select a {
-    text-decoration: none;
-    color: #130f40;
-    font-size: 15px;
-    font-weight: 500;
-    float: left;
-    width: 95px;
-    border-radius: 5%;
-
+.promo-button .promo-text {
+  color: white;
 }
 
-.header .icons .account .drop-down-select.active {
-    display: block !important;
+.promo-button .promo-highlight {
+  color: yellow;
+  animation: flashing 0.5s infinite;
+}
+@keyframes flashing {
+  0% {
+    color: rgb(241, 207, 14);
+  } /* Starting color */
+  50% {
+    color: rgb(199, 202, 36);
+  } /* Lighter yellow color */
+  100% {
+    color: rgb(238, 226, 54);
+  } /* Ending color */
 }
 
-.header .icons .account .drop-down-select.active a {
-    background-color: #f7f7f7;
+.promo-button:hover {
+  background-color: #e07507;
 }
 
-.header .icons .account .drop-down-select.active a:hover {
-    background-color: #f38609;
-    color: white;
-}
-
- .header .icons .account:hover .drop-down-select {
-    display: block;
-} 
-
-.header .icons .account:hover .drop-down-select a {
-    background-color: #f7f7f7;
-
-}
-
-.header .icons .account:hover .drop-down-select a:hover {
-    background-color: #f38609;
-    color: white;
-}
-*/
-/*
-@media (min-width: 769px) {
-  .header .icons .account:hover .drop-down-select {
-    display: block;
+/* Adjust font size and padding for smaller screens */
+@media (max-width: 576px) {
+  .promo-button {
+    font-size: 12px;
+    padding: 8px 16px;
   }
 }
-*/
 
 @media (max-width: 768px) {
   .header .navbar {
