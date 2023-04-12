@@ -1,5 +1,10 @@
 <template>
-  <div class="heading" style="padding-top: 2%;">
+  <div class="heading">
+    <span>Menu</span>
+    <h3>PDF Menu</h3>
+    <img class="pdf-menu" src="@/assets/images/menu.jpg" alt="PDF Menu" />
+  </div>
+  <div class="heading" style="padding-top: 2%">
     <span>Menu</span>
     <h3>Our Full Menu</h3>
   </div>
@@ -18,7 +23,7 @@
             :alt="item.image.alt"
             width="240"
             height="240"
-            style="object-fit: cover;"
+            style="object-fit: cover"
           />
         </div>
         <div class="category-content">
@@ -28,8 +33,8 @@
     </div>
   </div>
 
-  <div v-show="showModal" class="m-5" >
-    <div class="modal-overlay" >
+  <div v-show="showModal" class="m-5">
+    <div class="modal-overlay">
       <div class="card-modal">
         <div v-for="(item, index) in dishes" :key="index" class="card">
           <div>
@@ -52,10 +57,10 @@
 </template>
 
 <script>
-import sanity from '../sanity'
-import imageUrlBuilder from '@sanity/image-url'
+import sanity from "../sanity";
+import imageUrlBuilder from "@sanity/image-url";
 
-const imageBuilder = imageUrlBuilder(sanity)
+const imageBuilder = imageUrlBuilder(sanity);
 //gets the "restaurants" which just are the 10 categories, then also gets the dishes belonging to each one
 
 const query = `
@@ -65,55 +70,55 @@ const query = `
         ...,
       }
          }
-      `
+      `;
 export default {
-  name: 'Categories',
+  name: "Categories",
   data() {
     return {
       loading: true,
       categories: [],
       dishes: [],
       showModal: false,
-    }
+    };
   },
   created() {
-    this.fetchData()
+    this.fetchData();
   },
 
   watch: {
-    $route: 'fetchData',
+    $route: "fetchData",
   },
   methods: {
     imageUrlFor(source) {
-      return imageBuilder.image(source)
+      return imageBuilder.image(source);
     },
     fetchData() {
-      this.error = this.post = null
-      this.loading = true
+      this.error = this.post = null;
+      this.loading = true;
       sanity.fetch(query).then(
         (categories) => {
-          this.loading = false
-          this.categories = categories
+          this.loading = false;
+          this.categories = categories;
           //don't need this
-          this.dishes = categories[0].dishes
-          console.log(categories)
+          this.dishes = categories[0].dishes;
+          console.log(categories);
         },
         (error) => {
-          this.error = error
-        },
-      )
+          this.error = error;
+        }
+      );
     },
 
     openModal(item) {
-      this.dishes = item.dishes
+      this.dishes = item.dishes;
 
-      this.showModal = true
+      this.showModal = true;
     },
     closeModal() {
-      this.showModal = false
+      this.showModal = false;
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -138,12 +143,11 @@ export default {
 }
 
 .modal-overlay {
-  
   position: fixed;
   height: 100vh;
   left: 0;
   right: 0;
-  
+
   top: 0;
   /*
   top: 0;
@@ -151,7 +155,7 @@ export default {
   left: 0;
   right: 0;
   */
-  
+
   display: flex;
   justify-content: center;
   background-color: #000000da;
@@ -167,10 +171,9 @@ export default {
   */
   height: 50%;
   width: 50vh;
-  margin:auto;
-  
-  position:relative;
-  
+  margin: auto;
+
+  position: relative;
 
   /*
   margin-top: 20%;
@@ -188,13 +191,10 @@ export default {
 .image {
   margin-left: 0.5 rem;
   padding: 2rem;
- 
 }
 
 .image img {
   border-radius: 5%;
-  
- 
 }
 .close {
   margin: 10% 0 0 16px;

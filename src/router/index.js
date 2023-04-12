@@ -3,6 +3,7 @@ import Home from "../pages/Home.vue";
 import About from "../pages/About.vue";
 import Promo from "../pages/Promo.vue";
 import Menu from "../pages/Menu.vue";
+import CoffeeTea from "../pages/CoffeeTea.vue";
 
 const routes = [
   {
@@ -11,19 +12,25 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: "/Menu",
+    name: "Menu",
+    component: Menu,
   },
   {
     path: "/promotions",
     name: "Promotions",
     component: Promo,
   },
+
   {
-    path: "/Menu",
-    name: "Menu",
-    component: Menu,
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+  {
+    path: "/CoffeeTea",
+    name: "CoffeeTea",
+    component: CoffeeTea,
   },
   {
     path: "/:pathMatch(.*)*",

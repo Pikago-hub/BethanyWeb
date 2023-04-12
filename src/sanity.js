@@ -8,7 +8,7 @@ export default sanityClient({
   // useCdn == true gives fast, cheap responses using a globally distributed cache.
   // Set this to false if your application require the freshest possible
   // data always (potentially slightly slower and a bit more expensive).
-  projectId: "jrllbz94", //jrllbz94, hohy53bd
+  projectId: "v4v79qjm",
   dataset: "production",
   useCdn: true,
   apiVersion: "2021-10-21",

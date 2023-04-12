@@ -1,73 +1,89 @@
 <template>
   <div>
-    <div class="home-main">
-      <div class="content text-center">
-        <span>welcome foodies</span>
-        <h3>We guarantee to use fresh food with the best quality.😋</h3>
-        <a
-          href="https://eats.redbirdcloud.com/BethanyCafe"
-          class="btn btn-info btn-lg"
-          >order now</a
-        >
+    <div class="home-page">
+      <div class="home-main">
+        <div class="content text-center">
+          <span>welcome foodies</span>
+          <h3>We guarantee to use fresh food with the best quality.😋</h3>
+          <a
+            href="https://eats.redbirdcloud.com/BethanyCafe"
+            class="btn btn-info btn-lg"
+            >order now</a
+          >
+        </div>
+        <div class="image">
+          <img src="../assets/images/b.jpg" alt="" class="home-img" />
+        </div>
       </div>
-      <div class="image">
-        <img src="../assets/images/b.jpg" alt="" class="home-img" />
-      </div>
-    </div>
 
-    <div class="home-category">
-      <router-link @click="scrollToTop()" to="/menu" class="box">
-        <img src="../assets/images/egg-roll-img.png" alt="" />
-        <h3>Appetizers</h3>
-      </router-link>
-
-      <router-link @click="scrollToTop()" to="/menu" class="box">
-        <img src="../assets/images/rice-cake-img.png" alt="" />
-        <h3>Rice Cake</h3>
-      </router-link>
-
-      <router-link @click="scrollToTop()" to="/menu" class="box">
-        <img src="../assets/images/fried-rice-img.png" alt="" />
-        <h3>Fried Rice</h3>
-      </router-link>
-
-      <router-link @click="scrollToTop()" to="/menu" class="box">
-        <img src="../assets/images/noodle-soup-img.png" alt="" />
-        <h3>Noddles</h3>
-      </router-link>
-
-      <router-link @click="scrollToTop()" to="/menu" class="box">
-        <img src="../assets/images/platter-img.png" alt="" />
-        <h3>Combination Platter</h3>
-      </router-link>
-
-      <router-link @click="scrollToTop()" to="/menu" class="box">
-        <img src="../assets/images//tea-img.png" alt="" />
-        <h3>Tea</h3>
-      </router-link>
-
-      <router-link @click="scrollToTop()" to="/menu" class="box">
-        <img src="../assets/images/ss-img.png" alt="" />
-        <h3>Slush&Smoothies</h3>
-      </router-link>
-    </div>
-
-    <div class="home-banner">
-      <div class="grid-banner row">
-        <div class="grid col-md-8">
-          <img src="../assets/images/dis-1.jpg" alt="" />
-          <div class="content center">
-            <span>special offer</span>
-            <div />
-            <a href="https://eats.redbirdcloud.com/BethanyCafe" class="btn"
-              >order now</a
-            >
-          </div>
+      <div class="home-category">
+        <div class="box">
+          <a href="https://eats.redbirdcloud.com/BethanyCafe">
+            <img src="../assets/images/egg-roll-img.png" alt="" />
+            <h3>Appetizers</h3>
+          </a>
         </div>
 
-        <div class="grid col-md-4">
-          <img src="../assets/images/dis-2.jpg" alt="" />
-          <div class="content center"></div>
+        <div class="box">
+          <a href="https://eats.redbirdcloud.com/BethanyCafe">
+            <img src="../assets/images/rice-cake-img.png" alt="" />
+            <h3>Rice Cake</h3>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="https://eats.redbirdcloud.com/BethanyCafe">
+            <img src="../assets/images/fried-rice-img.png" alt="" />
+            <h3>Fried Rice</h3>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="https://eats.redbirdcloud.com/BethanyCafe">
+            <img src="../assets/images/noodle-soup-img.png" alt="" />
+            <h3>Noodles</h3>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="https://eats.redbirdcloud.com/BethanyCafe">
+            <img src="../assets/images/platter-img.png" alt="" />
+            <h3>Combination Platter</h3>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="https://eats.redbirdcloud.com/BethanyCafe">
+            <img src="../assets/images//tea-img.png" alt="" />
+            <h3>Tea</h3>
+          </a>
+        </div>
+
+        <div class="box">
+          <a href="https://eats.redbirdcloud.com/BethanyCafe">
+            <img src="../assets/images/ss-img.png" alt="" />
+            <h3>Slush&Smoothies</h3>
+          </a>
+        </div>
+      </div>
+
+      <div class="home-banner">
+        <div class="grid-banner row">
+          <div class="grid col-md-8">
+            <img src="../assets/images/dis-1.jpg" alt="" />
+            <div class="content center">
+              <span>special offer</span>
+              <div />
+              <a href="https://eats.redbirdcloud.com/BethanyCafe" class="btn"
+                >order now</a
+              >
+            </div>
+          </div>
+
+          <div class="grid col-md-4">
+            <img src="../assets/images/dis-2.jpg" alt="" />
+            <div class="content center"></div>
+          </div>
         </div>
       </div>
     </div>
