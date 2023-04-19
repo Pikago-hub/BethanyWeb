@@ -35,7 +35,8 @@
     </div>
 
     <div class="contact-form-section">
-      <h3 class="contact-form-title">Want to Join us?</h3>
+      <h3 class="contact-form-title hiring-heading">We're Hiring!</h3>
+      <p class="about-you-text">Tell us about you....</p>
       <div class="contact-container">
         <form class="contact-form">
           <div class="form-group">
@@ -97,6 +98,13 @@ export default {
 
 .about-section {
   padding: 2rem 9%;
+}
+.contact-form-section .hiring-heading {
+  font-size: 36px; /* Set the desired font size for the "We're Hiring!" heading */
+}
+
+.contact-form-section .about-you-text {
+  font-size: 24px; /* Set the desired font size for the "Tell us about you..." paragraph */
 }
 
 .about-section .about-content {
@@ -224,12 +232,21 @@ export default {
 }
 
 .submit-button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem; /* Adjust padding for better appearance */
   border: none;
   border-radius: 5px;
   background-color: #27ae60;
   color: #fff;
   cursor: pointer;
+  /* Define the water wave shape using clip-path with an SVG path */
+  clip-path: path("M0 100 Q 50 50, 100 100 L 100 0 L 0 0 Z");
+  /* Add a transition for a smooth hover effect */
+  transition: background-color 0.3s ease;
+}
+
+/* Add a hover effect for the submit button */
+.submit-button:hover {
+  background-color: #f38609;
 }
 
 @media (max-width: 768px) {

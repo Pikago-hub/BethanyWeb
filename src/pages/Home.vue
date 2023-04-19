@@ -21,7 +21,19 @@
           ></span>
         </div>
       </div>
-      <div class="home-category-container">
+      <div class="history-section">
+        <h2 class="history-title">History of Bethany</h2>
+        <p class="history-text">
+          Bethany Cafe is a family-owned and operated restaurant in Arlington,
+          TX. It is a popular spot for boba tea and Asian cuisine, serving a
+          variety of beverages and classic Taiwanese dishes like beef noodle
+          soup, shrimp omelet, stinky tofu, popcorn chicken, etc. The cafe is
+          known for its welcoming atmosphere and friendly service. Bethany Cafe
+          is located at 705 W Park Row Dr, Arlington TX 76013, and is open daily
+          from 11:00am to 10:00pm.
+        </p>
+      </div>
+      <!-- <div class="home-category-container">
         <div class="home-category">
           <div class="box">
             <a href="https://eats.redbirdcloud.com/BethanyCafe">
@@ -65,7 +77,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="home-banner">
         <div class="grid-banner row">
@@ -131,6 +143,22 @@ export default {
 </script>
 
 <style scoped>
+.history-section {
+  padding: 2rem 9%; /* Add some padding around the section */
+  text-align: center; /* Center the text */
+}
+
+.history-title {
+  font-size: 2.5rem; /* Set the font size for the heading */
+  margin-bottom: 1rem; /* Add some space below the heading */
+  color: #130f40; /* Set the color for the heading */
+}
+
+.history-text {
+  font-size: 1.2rem; /* Set the font size for the paragraph */
+  line-height: 1.6; /* Set the line height for better readability */
+  color: #666; /* Set the color for the paragraph */
+}
 .slideshow-container {
   width: 80%;
   max-width: 800px;
